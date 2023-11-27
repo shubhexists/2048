@@ -33,9 +33,12 @@ class BoardManager extends StateNotifier<Board> {
     state = box.get(0) ?? _newGame();
   }
 
+  int maxScore() {
+    return state.score > state.best ? state.score : state.best;
+  }
   // Create New Game state.
   Board _newGame() {
-    return Board.newGame(state.best + state.score, [random([])]);
+    return Board.newGame( maxScore(), [random([])]);
   }
 
   // Start New Game

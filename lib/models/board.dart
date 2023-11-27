@@ -37,10 +37,12 @@ class Board {
           bool? over,
           bool? won,
           Board? undo}) =>
-      Board(score ?? this.score, best ?? this.best, tiles ?? this.tiles,
-          over: over ?? this.over,
-          won: won ?? this.won,
-          undo: undo ?? this.undo);
+      Board(score ?? this.score,
+           best ?? this.best,
+           tiles ?? this.tiles,
+           over: over ?? this.over,
+           won: won ?? this.won,
+           undo: undo ?? this.undo);
 
   //Create a Board from json data
   factory Board.fromJson(Map<String, dynamic> json) => _$BoardFromJson(json);
